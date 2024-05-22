@@ -1,7 +1,7 @@
 {
 	"interface": {
 		"welcome": "Welcome to Transifex test!",
-		"godbye": "See you later, Commander.",
+		"goodbye2": "See you later, Commander.",
 		"error": "Oh no! Something went wrong."
 	}
 }
