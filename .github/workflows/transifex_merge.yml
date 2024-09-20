@@ -19,10 +19,14 @@ jobs:
         with:
           ref: master
 
-      - name: Force merge translation directories (excluding English)
+      - name: Setup Git User
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Force merge translation directories (excluding English)
+        run: |
+          git fetch origin transifex-synchronization-source
           for dir in language/*/; do
             if [ -d $dir ] && [ "$(basename $dir)" != "en" ]; then
               git checkout transifex-synchronization-source -- $dir
