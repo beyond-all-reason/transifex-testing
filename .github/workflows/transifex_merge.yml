@@ -10,8 +10,15 @@ on:
       - transifex-synchronization-source
 
 jobs:
+  echo-user-login:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo PR User Login
+        run: |
+          echo "PR User Login: ${{ github.event.pull_request.user.login }}"
+
   merge-translations:
-    if: github.event.pull_request.user.login == 'transifex-integration' && github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true # github.event.pull_request.user.login == 'transifex-integration' &&
     runs-on: ubuntu-latest
     steps:
       - name: Checkout master branch
