@@ -35,5 +35,6 @@ jobs:
               git add $dir
             fi
           done
+          git checkout master
           git commit -m "[Transifex] Update translations on master"
           git push origin master --force
