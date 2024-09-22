@@ -28,6 +28,7 @@ jobs:
         run: |
           git fetch --all
           git fetch origin transifex-synchronization-source
+          git checkout transifex-synchronization-source
           for dir in language/*/; do
             if [ -d $dir ] && [ "$(basename $dir)" != "en" ]; then
               git checkout transifex-synchronization-source -- $dir
