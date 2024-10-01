@@ -29,8 +29,8 @@ jobs:
           git fetch --unshallow origin transifex-synchronization-source
           for dir in language/*/; do
             if [ -d $dir ] && [ "$(basename $dir)" != "en" ]; then
-              git checkout transifex-synchronization-source -- $dir
-              git add $dir
+              git checkout transifex-synchronization-source -- language/$dir
+              git add language/$dir
             fi
           done
           git commit -m "[Transifex] Update translations on master"
