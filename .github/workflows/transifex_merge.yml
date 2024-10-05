@@ -36,7 +36,7 @@ jobs:
             echo "$dir"
             echo "$(basename $dir)"
             if [ -d $dir ] && [ "$(basename $dir)" != "en" ]; then
-              git checkout transifex-synchronization-source -- language/$dir
+              git checkout origin/transifex-synchronization-source -- language/$dir
               git add language/$dir
               git status
             fi
