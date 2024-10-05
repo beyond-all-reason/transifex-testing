@@ -32,13 +32,9 @@ jobs:
           echo "2"
           git status
           for dir in language/*/; do
-            echo "3"
-            echo "$dir"
-            echo "$(basename $dir)"
             if [ -d $dir ] && [ "$(basename $dir)" != "en" ]; then
-              git checkout transifex-synchronization-source -- language/$dir
-              git add language/$dir
-              git status
+              git checkout origin/transifex-synchronization-source -- $dir
+              git add $dir
             fi
           done
           echo "4"
