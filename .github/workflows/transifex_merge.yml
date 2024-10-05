@@ -28,6 +28,8 @@ jobs:
         run: |
           git fetch --unshallow origin transifex-synchronization-source
           for dir in language/*/; do
+            echo "$dir"
+            echo "$(basename $dir)"
             if [ -d $dir ] && [ "$(basename $dir)" != "en" ]; then
               git checkout transifex-synchronization-source -- language/$dir
               git add language/$dir
