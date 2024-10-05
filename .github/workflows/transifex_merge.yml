@@ -26,7 +26,7 @@ jobs:
 
       - name: Force merge translation directories (excluding English)
         run: |
-          echo "test"
+          echo "Test 2"
           echo "1"
           git status
           git fetch --unshallow origin transifex-synchronization-source
@@ -37,8 +37,8 @@ jobs:
             echo "$dir"
             echo "$(basename $dir)"
             if [ -d $dir ] && [ "$(basename $dir)" != "en" ]; then
-              git checkout origin/transifex-synchronization-source -- language/$dir
-              git add language/$dir
+              git checkout origin/transifex-synchronization-source -- $dir
+              git add $dir
               git status
             fi
           done
