@@ -23,6 +23,7 @@ jobs:
 
       - name: Update English Source to Transifex
         run: |
+          git fetch origin master
           git checkout origin/master -- language/en
           git add language/en
           git commit -m "[Transifex] Update English source files"
