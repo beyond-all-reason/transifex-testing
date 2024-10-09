@@ -28,6 +28,7 @@ jobs:
         run: |
           git checkout master
           git rm -r 'language/' ':!language/en/'
-          git checkout origin/transifex-synchronization-source -- 'language/' ':!language/en/'
+          git fetch transifex-synchronization-source
+          git checkout transifex-synchronization-source -- 'language/' ':!language/en/'
           git commit -m "[Transifex] Update translations on master"
           git push
