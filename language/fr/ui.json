@@ -1,7 +1,7 @@
 {
 	"interface": {
 		"welcome": "Bienvenue a test du Transifex!",
-		"goodbye2": "Au revoir, Commandanté!",
+		"goodbye2": "Au revoir, Commandanténté!",
 		"error": "Mon dieu! C'est une catastrophe!"
 	}
 }
