@@ -26,12 +26,8 @@ jobs:
 
       - name: Force merge translation directories (excluding English)
         run: |
-          git fetch --unshallow origin transifex-synchronization-source
-          for dir in language/*/; do
-            if [ -d $dir ] && [ "$(basename $dir)" != "en" ]; then
-              git checkout origin/transifex-synchronization-source -- $dir
-              git add $dir
-            fi
-          done
+          git checkout master
+          git rm -r 'language/' ':!language/en/'
+          git checkout transifex-synchronization-source -- 'language/' ':!language/en/'
           git commit -m "[Transifex] Update translations on master"
-          git push origin master --force
+          git push
