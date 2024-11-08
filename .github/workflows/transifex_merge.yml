@@ -12,7 +12,7 @@ on:
 
 jobs:
   merge-translations:
-    if: github.event.pull_request.user.login == 'transifex-integration[bot]' && github.event.pull_request.merged == true
+    if: (github.event.pull_request.user.login == 'transifex-integration[bot]' && github.event.pull_request.merged == true) || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout master branch
