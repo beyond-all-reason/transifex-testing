@@ -2,7 +2,6 @@
 	"animals": {
 		"dog": "Das Rover",
 		"cat2": "Das Mittens",
-		"horse": "Das Ed",
-		"mouse": "Das Micket"
+		"horse": "Das Ed"
 	}
 }
