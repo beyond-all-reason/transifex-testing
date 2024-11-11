@@ -2,7 +2,6 @@
 	"animals": {
 		"dog": "Rover",
 		"cat2": "Mittens",
-		"horse": "Ed",
-		"test2": "Test 2"
+		"horse": "Ed"
 	}
 }
